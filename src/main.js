@@ -6,6 +6,7 @@ for (const form of document.querySelectorAll('.waitlist-form')) {
   const input = form.querySelector('input[name="email"]');
   const button = form.querySelector('button');
   const message = form.querySelector('.form-message');
+  const buttonLabel = button.innerHTML;
 
   const showMessage = (text, state) => {
     message.textContent = text;
@@ -44,7 +45,7 @@ for (const form of document.querySelectorAll('.waitlist-form')) {
       showMessage('Waitlist isn’t connected right now. Your email was not saved. Please try again later.', 'error');
     } finally {
       button.disabled = false;
-      button.innerHTML = 'Join the waitlist <span aria-hidden="true">↗</span>';
+      button.innerHTML = buttonLabel;
     }
   });
 }
